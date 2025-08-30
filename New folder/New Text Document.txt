@@ -1,0 +1,1173 @@
+Excellent work, lekin me tumhe ye deta ho jo actual result ay ha tum isko review karo or mujhe bas ye btao kaha kaha kia masla ha or har masla ko alag alag solve karo dows [Version 10.0.26100.4770]
+(c) Microsoft Corporation. All rights reserved.
+D:\Java\DSA_PROJECTS>javac Main.java
+D:\Java\DSA_PROJECTS>java Main
+PetManager is null, skipping event loading.
+No users file found, starting fresh.
+UserManager set in PetManager: User.UserManager@452b3a41
+No pets file found, starting fresh.
+No users file found, starting fresh.
+Attempting to load assignments from: assignments.txt
+No assignments file found, starting fresh.
+=== Virtual Pet Sanctuary Simulator ===
+1: Login
+2: Register
+3: Continue as Guest
+0: Exit
+Enter choice: 2
+? Register New User
+Enter User Name: Fahad Sial
+Enter Email: fahad@gift.edu.pk
+Enter Password: 12345678
+Enter Age: 20
+Enter Role (C for CareTaker, M for Manager): m
+Error loading funds. Defaulting to $0.
+Users saved successfully.
+Registration successful for M: Fahad Sial, instance:
+___User Details__
+ Name: Fahad Sial, Email: fahad@gift.edu.pk, Password: 12345678, Age: 20, Role: M
+=== Virtual Pet Sanctuary Simulator ===
+1: Login
+2: Register
+3: Continue as Guest
+0: Exit
+Enter choice: 2
+? Register New User
+Enter User Name: Ali khan
+Enter Email: ali@gmail.com
+Enter Password: 12345678
+Enter Age: 20
+Enter Role (C for CareTaker, M for Manager): c
+CareTaker banaya: Ali khan, Email: ali@gmail.com, instance:
+___User Details__
+ Name: Ali khan, Email: ali@gmail.com, Password: 12345678, Age: 20, Role: C
+Users saved successfully.
+Registration successful for C: Ali khan, instance:
+___User Details__
+ Name: Ali khan, Email: ali@gmail.com, Password: 12345678, Age: 20, Role: C
+=== Virtual Pet Sanctuary Simulator ===
+1: Login
+2: Register
+3: Continue as Guest
+0: Exit
+Enter choice: 1
+Login User
+Enter Email: fahad@gift.edu.pk
+Enter Password: 12345678
+Enter Role (C for CareTaker, M for Manager): m
+Login successful, user instance:
+___User Details__
+ Name: Fahad Sial, Email: fahad@gift.edu.pk, Password: 12345678, Age: 20, Role: M
+Login Successful! Welcome, Fahad Sial
+Manager instance:
+___User Details__
+ Name: Fahad Sial, Email: fahad@gift.edu.pk, Password: 12345678, Age: 20, Role: M, email: fahad@gift.edu.pk
+Attempting to load assignments from: assignments.txt
+No assignments file found, starting fresh.
+=== Manager Menu ===
+1: Add Funds
+2: Purchase Upgrades
+3: Generate Report
+4: Add Pet to Sanctuary
+5: Remove Pet from Sanctuary
+6: Manage Events
+7: Assign Pet to CareTaker
+8: Search Pets by Price Range
+9: Undo Last Fund Change
+10: Prioritize Critical Pets
+11: Track Pet Interactions
+0: Logout
+Enter choice: 1
+Enter amount to add: 1000
+Funds added: $1000.0 | Total Funds: $1000.0
+Funds saved successfully.
+Funds added: $1000.0
+=== Manager Menu ===
+1: Add Funds
+2: Purchase Upgrades
+3: Generate Report
+4: Add Pet to Sanctuary
+5: Remove Pet from Sanctuary
+6: Manage Events
+7: Assign Pet to CareTaker
+8: Search Pets by Price Range
+9: Undo Last Fund Change
+10: Prioritize Critical Pets
+11: Track Pet Interactions
+0: Logout
+Enter choice: 3
+=== Sanctuary Report ===
+Total Funds: $1000.0
+Total Pets: 0
+Pets Available for Sale: 0
+=== Manager Menu ===
+1: Add Funds
+2: Purchase Upgrades
+3: Generate Report
+4: Add Pet to Sanctuary
+5: Remove Pet from Sanctuary
+6: Manage Events
+7: Assign Pet to CareTaker
+8: Search Pets by Price Range
+9: Undo Last Fund Change
+10: Prioritize Critical Pets
+11: Track Pet Interactions
+0: Logout
+Enter choice: 4
+Enter pet type (dog/rabbit/horse/lion):
+dog
+Enter pet ID: 1
+Enter pet name: Max
+Is pet for sale (true/false): true
+Enter pet age: 2
+Enter pet price: $150
+Pet added successfully.
+Attempting to save pets to: pets.txt
+Absolute path: D:\Java\DSA_PROJECTS\pets.txt
+Writing pet: 1,Max,true,2,150.0,50,100,50,dog
+Pets saved successfully to: D:\Java\DSA_PROJECTS\pets.txt
+=== Manager Menu ===
+1: Add Funds
+2: Purchase Upgrades
+3: Generate Report
+4: Add Pet to Sanctuary
+5: Remove Pet from Sanctuary
+6: Manage Events
+7: Assign Pet to CareTaker
+8: Search Pets by Price Range
+9: Undo Last Fund Change
+10: Prioritize Critical Pets
+11: Track Pet Interactions
+0: Logout
+Enter choice: 4
+Enter pet type (dog/rabbit/horse/lion):
+rabbit
+Enter pet ID: 2
+Enter pet name: bunny
+Is pet for sale (true/false): true
+Enter pet age: 1
+Enter pet price: $100
+Pet added successfully.
+Attempting to save pets to: pets.txt
+Absolute path: D:\Java\DSA_PROJECTS\pets.txt
+Writing pet: 1,Max,true,2,150.0,50,100,50,dog
+Writing pet: 2,bunny,true,1,100.0,50,100,50,rabbit
+Pets saved successfully to: D:\Java\DSA_PROJECTS\pets.txt
+=== Manager Menu ===
+1: Add Funds
+2: Purchase Upgrades
+3: Generate Report
+4: Add Pet to Sanctuary
+5: Remove Pet from Sanctuary
+6: Manage Events
+7: Assign Pet to CareTaker
+8: Search Pets by Price Range
+9: Undo Last Fund Change
+10: Prioritize Critical Pets
+11: Track Pet Interactions
+0: Logout
+Enter choice: 7
+=== Assign Pet to a CareTaker ===
+Total users loaded: 2
+User: Fahad Sial, Role: M
+User: Ali khan, Role: C
+Added CareTaker: Ali khan
+Available CareTakers: 1
+Select a CareTaker:
+1. Ali khan
+Enter CareTaker number: 1
+Pet [ID=1, Name=Max, For Sale=true, Age=2, Price=$150.0, Hunger=50, Health=100, Mood=50, Type=dog]
+Pet [ID=2, Name=bunny, For Sale=true, Age=1, Price=$100.0, Hunger=50, Health=100, Mood=50, Type=rabbit]
+Enter Pet Name to Assign: Max
+Pet nahi mila: ID 1
+Pet add ho raha hai: Max (ID: 1)
+Head/tail/current set kiya: Max
+List ka size ab: 1
+Pet assign kiya: Max (ID: 1) ko Ali khan, instance:
+___User Details__
+ Name: Ali khan, Email: ali@gmail.com, Password: 12345678, Age: 20, Role: C
+Assigned Max (ID: 1) to Ali khan, instance:
+___User Details__
+ Name: Ali khan, Email: ali@gmail.com, Password: 12345678, Age: 20, Role: C
+Saved assignment to assignments.txt: ali@gmail.com,1
+ Pet Max has been assigned to Ali khan
+=== Manager Menu ===
+1: Add Funds
+2: Purchase Upgrades
+3: Generate Report
+4: Add Pet to Sanctuary
+5: Remove Pet from Sanctuary
+6: Manage Events
+7: Assign Pet to CareTaker
+8: Search Pets by Price Range
+9: Undo Last Fund Change
+10: Prioritize Critical Pets
+11: Track Pet Interactions
+0: Logout
+Enter choice: 6
+=== Event Management ===
+1: View All Events
+2: View Unresolved Events
+3: Resolve an Event
+4: Manage Event Dependencies
+5: Undo Event Actions
+6: View Event Timeline
+7: Search Events by Date Range
+8: View Critical Events
+9: Trigger Random Event
+0: Back to Main Menu
+Enter choice: 9
+Pet bunny health reduced to 70 due to Escape.
+Random event triggered: Event Type: Escape
+Date: 2025-08-03T11:02:48.605020600
+Description: bunny has escaped from the sanctuary!
+Affected Pet: bunny
+Resolved: No
+Events saved successfully.
+Attempting to save pets to: pets.txt
+Absolute path: D:\Java\DSA_PROJECTS\pets.txt
+Writing pet: 1,Max,true,2,150.0,50,100,50,dog
+Writing pet: 2,bunny,true,1,100.0,50,70,50,rabbit
+Pets saved successfully to: D:\Java\DSA_PROJECTS\pets.txt
+=== Event Management ===
+1: View All Events
+2: View Unresolved Events
+3: Resolve an Event
+4: Manage Event Dependencies
+5: Undo Event Actions
+6: View Event Timeline
+7: Search Events by Date Range
+8: View Critical Events
+9: Trigger Random Event
+0: Back to Main Menu
+Enter choice: 9
+Pet Max health reduced to 80 due to Illness.
+Random event triggered: Event Type: Illness
+Date: 2025-08-03T11:03:36.589194700
+Description: Max is sick and needs treatment.
+Affected Pet: Max
+Resolved: No
+Events saved successfully.
+Attempting to save pets to: pets.txt
+Absolute path: D:\Java\DSA_PROJECTS\pets.txt
+Writing pet: 1,Max,true,2,150.0,50,80,50,dog
+Writing pet: 2,bunny,true,1,100.0,50,70,50,rabbit
+Pets saved successfully to: D:\Java\DSA_PROJECTS\pets.txt
+=== Event Management ===
+1: View All Events
+2: View Unresolved Events
+3: Resolve an Event
+4: Manage Event Dependencies
+5: Undo Event Actions
+6: View Event Timeline
+7: Search Events by Date Range
+8: View Critical Events
+9: Trigger Random Event
+0: Back to Main Menu
+Enter choice: 0
+Returning to main menu...
+=== Manager Menu ===
+1: Add Funds
+2: Purchase Upgrades
+3: Generate Report
+4: Add Pet to Sanctuary
+5: Remove Pet from Sanctuary
+6: Manage Events
+7: Assign Pet to CareTaker
+8: Search Pets by Price Range
+9: Undo Last Fund Change
+10: Prioritize Critical Pets
+11: Track Pet Interactions
+0: Logout
+Enter choice: 10
+No critical pets found.
+=== Manager Menu ===
+1: Add Funds
+2: Purchase Upgrades
+3: Generate Report
+4: Add Pet to Sanctuary
+5: Remove Pet from Sanctuary
+6: Manage Events
+7: Assign Pet to CareTaker
+8: Search Pets by Price Range
+9: Undo Last Fund Change
+10: Prioritize Critical Pets
+11: Track Pet Interactions
+0: Logout
+Enter choice: 10
+No critical pets found.
+=== Manager Menu ===
+1: Add Funds
+2: Purchase Upgrades
+3: Generate Report
+4: Add Pet to Sanctuary
+5: Remove Pet from Sanctuary
+6: Manage Events
+7: Assign Pet to CareTaker
+8: Search Pets by Price Range
+9: Undo Last Fund Change
+10: Prioritize Critical Pets
+11: Track Pet Interactions
+0: Logout
+Enter choice: 6
+=== Event Management ===
+1: View All Events
+2: View Unresolved Events
+3: Resolve an Event
+4: Manage Event Dependencies
+5: Undo Event Actions
+6: View Event Timeline
+7: Search Events by Date Range
+8: View Critical Events
+9: Trigger Random Event
+0: Back to Main Menu
+Enter choice: 8
+Critical Events:
+Checking unresolved events: 2
+Event type: Escape
+Event Type: Escape
+Date: 2025-08-03T11:02:48.605020600
+Description: bunny has escaped from the sanctuary!
+Affected Pet: bunny
+Resolved: No
+Event type: Illness
+Event Type: Illness
+Date: 2025-08-03T11:03:36.589194700
+Description: Max is sick and needs treatment.
+Affected Pet: Max
+Resolved: No
+=== Event Management ===
+1: View All Events
+2: View Unresolved Events
+3: Resolve an Event
+4: Manage Event Dependencies
+5: Undo Event Actions
+6: View Event Timeline
+7: Search Events by Date Range
+8: View Critical Events
+9: Trigger Random Event
+0: Back to Main Menu
+Enter choice: 0
+Returning to main menu...
+=== Manager Menu ===
+1: Add Funds
+2: Purchase Upgrades
+3: Generate Report
+4: Add Pet to Sanctuary
+5: Remove Pet from Sanctuary
+6: Manage Events
+7: Assign Pet to CareTaker
+8: Search Pets by Price Range
+9: Undo Last Fund Change
+10: Prioritize Critical Pets
+11: Track Pet Interactions
+0: Logout
+Enter choice: 6
+=== Event Management ===
+1: View All Events
+2: View Unresolved Events
+3: Resolve an Event
+4: Manage Event Dependencies
+5: Undo Event Actions
+6: View Event Timeline
+7: Search Events by Date Range
+8: View Critical Events
+9: Trigger Random Event
+0: Back to Main Menu
+Enter choice: 0
+Returning to main menu...
+=== Manager Menu ===
+1: Add Funds
+2: Purchase Upgrades
+3: Generate Report
+4: Add Pet to Sanctuary
+5: Remove Pet from Sanctuary
+6: Manage Events
+7: Assign Pet to CareTaker
+8: Search Pets by Price Range
+9: Undo Last Fund Change
+10: Prioritize Critical Pets
+11: Track Pet Interactions
+0: Logout
+Enter choice: 2
+Enter upgrade to purchase (Playground/Clinic/Feeding Station): Feeding Station
+Upgrade 'Feeding Station' purchased successfully. Remaining funds: $0.0
+Funds saved successfully.
+=== Manager Menu ===
+1: Add Funds
+2: Purchase Upgrades
+3: Generate Report
+4: Add Pet to Sanctuary
+5: Remove Pet from Sanctuary
+6: Manage Events
+7: Assign Pet to CareTaker
+8: Search Pets by Price Range
+9: Undo Last Fund Change
+10: Prioritize Critical Pets
+11: Track Pet Interactions
+0: Logout
+Enter choice: 9
+Funds saved successfully.
+Last fund change undone. Current funds: $0.0
+=== Manager Menu ===
+1: Add Funds
+2: Purchase Upgrades
+3: Generate Report
+4: Add Pet to Sanctuary
+5: Remove Pet from Sanctuary
+6: Manage Events
+7: Assign Pet to CareTaker
+8: Search Pets by Price Range
+9: Undo Last Fund Change
+10: Prioritize Critical Pets
+11: Track Pet Interactions
+0: Logout
+Enter choice: 8
+Enter minimum price: 100
+Enter maximum price: 200
+Pets in price range $100.0 - $200.0:
+Pet [ID=1, Name=Max, For Sale=true, Age=2, Price=$150.0, Hunger=50, Health=80, Mood=50, Type=dog]
+Pet [ID=2, Name=bunny, For Sale=true, Age=1, Price=$100.0, Hunger=50, Health=70, Mood=50, Type=rabbit]
+=== Manager Menu ===
+1: Add Funds
+2: Purchase Upgrades
+3: Generate Report
+4: Add Pet to Sanctuary
+5: Remove Pet from Sanctuary
+6: Manage Events
+7: Assign Pet to CareTaker
+8: Search Pets by Price Range
+9: Undo Last Fund Change
+10: Prioritize Critical Pets
+11: Track Pet Interactions
+0: Logout
+Enter choice: 11
+Pet Interaction Graph:
+=== Manager Menu ===
+1: Add Funds
+2: Purchase Upgrades
+3: Generate Report
+4: Add Pet to Sanctuary
+5: Remove Pet from Sanctuary
+6: Manage Events
+7: Assign Pet to CareTaker
+8: Search Pets by Price Range
+9: Undo Last Fund Change
+10: Prioritize Critical Pets
+11: Track Pet Interactions
+0: Logout
+Enter choice: 5
+Enter pet Name to remove:
+Bunny
+Pet removed successfully.
+Attempting to save pets to: pets.txt
+Absolute path: D:\Java\DSA_PROJECTS\pets.txt
+Writing pet: 1,Max,true,2,150.0,50,80,50,dog
+Pets saved successfully to: D:\Java\DSA_PROJECTS\pets.txt
+Pet bunny removed successfully.
+=== Manager Menu ===
+1: Add Funds
+2: Purchase Upgrades
+3: Generate Report
+4: Add Pet to Sanctuary
+5: Remove Pet from Sanctuary
+6: Manage Events
+7: Assign Pet to CareTaker
+8: Search Pets by Price Range
+9: Undo Last Fund Change
+10: Prioritize Critical Pets
+11: Track Pet Interactions
+0: Logout
+Enter choice: 6
+=== Event Management ===
+1: View All Events
+2: View Unresolved Events
+3: Resolve an Event
+4: Manage Event Dependencies
+5: Undo Event Actions
+6: View Event Timeline
+7: Search Events by Date Range
+8: View Critical Events
+9: Trigger Random Event
+0: Back to Main Menu
+Enter choice: 1
+Displaying all events:
+- Event Type: Escape
+Date: 2025-08-03T11:02:48.605020600
+Description: bunny has escaped from the sanctuary!
+Affected Pet: bunny
+Resolved: No
+- Event Type: Illness
+Date: 2025-08-03T11:03:36.589194700
+Description: Max is sick and needs treatment.
+Affected Pet: Max
+Resolved: No
+=== Event Management ===
+1: View All Events
+2: View Unresolved Events
+3: Resolve an Event
+4: Manage Event Dependencies
+5: Undo Event Actions
+6: View Event Timeline
+7: Search Events by Date Range
+8: View Critical Events
+9: Trigger Random Event
+0: Back to Main Menu
+Enter choice: 2
+Displaying unresolved events:
+1. Event Type: Escape
+Date: 2025-08-03T11:02:48.605020600
+Description: bunny has escaped from the sanctuary!
+Affected Pet: bunny
+Resolved: No
+2. Event Type: Illness
+Date: 2025-08-03T11:03:36.589194700
+Description: Max is sick and needs treatment.
+Affected Pet: Max
+Resolved: No
+=== Event Management ===
+1: View All Events
+2: View Unresolved Events
+3: Resolve an Event
+4: Manage Event Dependencies
+5: Undo Event Actions
+6: View Event Timeline
+7: Search Events by Date Range
+8: View Critical Events
+9: Trigger Random Event
+0: Back to Main Menu
+Enter choice: 3
+Enter ID of Event to resolve: 1
+Event 'Escape' has been resolved.
+Event resolved successfully!
+=== Event Management ===
+1: View All Events
+2: View Unresolved Events
+3: Resolve an Event
+4: Manage Event Dependencies
+5: Undo Event Actions
+6: View Event Timeline
+7: Search Events by Date Range
+8: View Critical Events
+9: Trigger Random Event
+0: Back to Main Menu
+Enter choice: 4
+1: Add Dependency, 2: Display Dependencies
+1
+Enter parent event ID: 1
+Enter child event ID: 2
+Dependency added: Escape -> Illness
+=== Event Management ===
+1: View All Events
+2: View Unresolved Events
+3: Resolve an Event
+4: Manage Event Dependencies
+5: Undo Event Actions
+6: View Event Timeline
+7: Search Events by Date Range
+8: View Critical Events
+9: Trigger Random Event
+0: Back to Main Menu
+Enter choice: 5
+1: Undo Last Action, 2: View Action History
+1
+Undid action: Removed event Illness
+=== Event Management ===
+1: View All Events
+2: View Unresolved Events
+3: Resolve an Event
+4: Manage Event Dependencies
+5: Undo Event Actions
+6: View Event Timeline
+7: Search Events by Date Range
+8: View Critical Events
+9: Trigger Random Event
+0: Back to Main Menu
+Enter choice: 6
+Enter event ID to add to timeline (or 0 to skip): 1
+Enter direction (forward/backward): forward
+Event Timeline (forward):
+Event Type: Escape
+Date: 2025-08-03T11:02:48.605020600
+Description: bunny has escaped from the sanctuary!
+Affected Pet: bunny
+Resolved: Yes
+=== Event Management ===
+1: View All Events
+2: View Unresolved Events
+3: Resolve an Event
+4: Manage Event Dependencies
+5: Undo Event Actions
+6: View Event Timeline
+7: Search Events by Date Range
+8: View Critical Events
+9: Trigger Random Event
+0: Back to Main Menu
+Enter choice: 7
+Enter start date (yyyy-MM-dd'T'HH:mm:ss): 2025-08-03T10:38:00
+Enter end date (yyyy-MM-dd'T'HH:mm:ss): 2025-08-03T10:41:00
+Events sorted by date.
+No events found in the date range: 2025-08-03T10:38 to 2025-08-03T10:41
+=== Event Management ===
+1: View All Events
+2: View Unresolved Events
+3: Resolve an Event
+4: Manage Event Dependencies
+5: Undo Event Actions
+6: View Event Timeline
+7: Search Events by Date Range
+8: View Critical Events
+9: Trigger Random Event
+0: Back to Main Menu
+Enter choice: 0
+Returning to main menu...
+=== Manager Menu ===
+1: Add Funds
+2: Purchase Upgrades
+3: Generate Report
+4: Add Pet to Sanctuary
+5: Remove Pet from Sanctuary
+6: Manage Events
+7: Assign Pet to CareTaker
+8: Search Pets by Price Range
+9: Undo Last Fund Change
+10: Prioritize Critical Pets
+11: Track Pet Interactions
+0: Logout
+Enter choice: 0
+Logging out...
+=== Virtual Pet Sanctuary Simulator ===
+1: Login
+2: Register
+3: Continue as Guest
+0: Exit
+Enter choice: 1
+Login User
+Enter Email: ali@gmail.com
+Enter Password: 12345678
+Enter Role (C for CareTaker, M for Manager): c
+Login successful, user instance:
+___User Details__
+ Name: Ali khan, Email: ali@gmail.com, Password: 12345678, Age: 20, Role: C
+Login Successful! Welcome, Ali khan
+CareTaker instance:
+___User Details__
+ Name: Ali khan, Email: ali@gmail.com, Password: 12345678, Age: 20, Role: C, email: ali@gmail.com
+Attempting to load assignments from: assignments.txt
+Reading assignment: ali@gmail.com,1
+Found user: Ali khan, instance:
+___User Details__
+ Name: Ali khan, Email: ali@gmail.com, Password: 12345678, Age: 20, Role: C
+CareTaker: Ali khan, Pet: Max, Email: ali@gmail.com, instance:
+___User Details__
+ Name: Ali khan, Email: ali@gmail.com, Password: 12345678, Age: 20, Role: C
+Pet mil gaya: Max (ID: 1)
+Pet Max pehle se assign hai Ali khan ko
+Assigned Max (ID: 1) to Ali khan
+Total assignments loaded: 1
+=== CareTaker Menu ===
+1: View Assigned Pets
+2: View Assigned Pets Reverse
+3: Interact with Pet
+4: Resolve Event
+5: Navigate to Next Critical Pet
+6: Navigate to Previous Pet
+7: Search Pet by Mood
+8: Sort Pets by Hunger
+9: Manage Care Queue
+10: Monitor Pet Health
+0: Logout
+Enter choice: 1
+Pets jo Ali khan ko assign hain:
+Assigned pets ki list check kar rahe hain, size: 1, instance:
+___User Details__
+ Name: Ali khan, Email: ali@gmail.com, Password: 12345678, Age: 20, Role: C
+Pets aage ki taraf dikhaye ja rahe hain, size: 1
+Max (ID: 1)
+=== CareTaker Menu ===
+1: View Assigned Pets
+2: View Assigned Pets Reverse
+3: Interact with Pet
+4: Resolve Event
+5: Navigate to Next Critical Pet
+6: Navigate to Previous Pet
+7: Search Pet by Mood
+8: Sort Pets by Hunger
+9: Manage Care Queue
+10: Monitor Pet Health
+0: Logout
+Enter choice: 2
+Pets ki reverse list:
+Pets peechhe ki taraf dikhaye ja rahe hain, size: 1
+Max (ID: 1)
+=== CareTaker Menu ===
+1: View Assigned Pets
+2: View Assigned Pets Reverse
+3: Interact with Pet
+4: Resolve Event
+5: Navigate to Next Critical Pet
+6: Navigate to Previous Pet
+7: Search Pet by Mood
+8: Sort Pets by Hunger
+9: Manage Care Queue
+10: Monitor Pet Health
+0: Logout
+Enter choice: 3
+Enter Pet Name to Interact: Max
+Pet mil gaya: Max (ID: 1)
+Pet mil gaya: Max (ID: 1)
+Ali khan pet ke saath interact kar raha hai: Max
+Max has been fed.
+Max is happy after playing.
+Max has been healed.
+=== CareTaker Menu ===
+1: View Assigned Pets
+2: View Assigned Pets Reverse
+3: Interact with Pet
+4: Resolve Event
+5: Navigate to Next Critical Pet
+6: Navigate to Previous Pet
+7: Search Pet by Mood
+8: Sort Pets by Hunger
+9: Manage Care Queue
+10: Monitor Pet Health
+0: Logout
+Enter choice: 4
+Assigned pets:
+Pets aage ki taraf dikhaye ja rahe hain, size: 1
+Max (ID: 1)
+Event resolve karne ke liye pet ka naam daal: Max
+Head le rahe hain, size: 1
+Events saved successfully.
+Event added: Event Type: Manual
+Date: 2025-08-03T11:12:29.054330600
+Description: Manual event triggered for Max
+Affected Pet: Max
+Resolved: No
+=== CareTaker Menu ===
+1: View Assigned Pets
+2: View Assigned Pets Reverse
+3: Interact with Pet
+4: Resolve Event
+5: Navigate to Next Critical Pet
+6: Navigate to Previous Pet
+7: Search Pet by Mood
+8: Sort Pets by Hunger
+9: Manage Care Queue
+10: Monitor Pet Health
+0: Logout
+Enter choice: 5
+Agla critical pet dhoondh rahe hain
+Koi critical pet nahi mila
+Koi critical pet nahi mila.
+=== CareTaker Menu ===
+1: View Assigned Pets
+2: View Assigned Pets Reverse
+3: Interact with Pet
+4: Resolve Event
+5: Navigate to Next Critical Pet
+6: Navigate to Previous Pet
+7: Search Pet by Mood
+8: Sort Pets by Hunger
+9: Manage Care Queue
+10: Monitor Pet Health
+0: Logout
+Enter choice: 6
+Pichhla pet dhoondh rahe hain
+Koi pichhla pet nahi
+Koi pichhla pet nahi.
+=== CareTaker Menu ===
+1: View Assigned Pets
+2: View Assigned Pets Reverse
+3: Interact with Pet
+4: Resolve Event
+5: Navigate to Next Critical Pet
+6: Navigate to Previous Pet
+7: Search Pet by Mood
+8: Sort Pets by Hunger
+9: Manage Care Queue
+10: Monitor Pet Health
+0: Logout
+Enter choice: 7
+Enter Mood Threshold: 70
+Mood 70 se kam wale pets dhoondh rahe hain:
+Head le rahe hain, size: 1
+Max (Mood: 60)
+=== CareTaker Menu ===
+1: View Assigned Pets
+2: View Assigned Pets Reverse
+3: Interact with Pet
+4: Resolve Event
+5: Navigate to Next Critical Pet
+6: Navigate to Previous Pet
+7: Search Pet by Mood
+8: Sort Pets by Hunger
+9: Manage Care Queue
+10: Monitor Pet Health
+0: Logout
+Enter choice: 8
+Head le rahe hain, size: 1
+Pets ko hunger ke hisaab se sort kiya (ascending):
+Max (Hunger: 40)
+=== CareTaker Menu ===
+1: View Assigned Pets
+2: View Assigned Pets Reverse
+3: Interact with Pet
+4: Resolve Event
+5: Navigate to Next Critical Pet
+6: Navigate to Previous Pet
+7: Search Pet by Mood
+8: Sort Pets by Hunger
+9: Manage Care Queue
+10: Monitor Pet Health
+0: Logout
+Enter choice: 9
+Enter action (add/remove): add
+Enter Pet Name: max
+Pet mil gaya: Max (ID: 1)
+Pet Max queue mein add kiya
+=== CareTaker Menu ===
+1: View Assigned Pets
+2: View Assigned Pets Reverse
+3: Interact with Pet
+4: Resolve Event
+5: Navigate to Next Critical Pet
+6: Navigate to Previous Pet
+7: Search Pet by Mood
+8: Sort Pets by Hunger
+9: Manage Care Queue
+10: Monitor Pet Health
+0: Logout
+Enter choice: 10
+Enter Pet Name to Monitor: Max
+Pet mil gaya: Max (ID: 1)
+Pet Max ki health monitor ki: Health = 90
+=== CareTaker Menu ===
+1: View Assigned Pets
+2: View Assigned Pets Reverse
+3: Interact with Pet
+4: Resolve Event
+5: Navigate to Next Critical Pet
+6: Navigate to Previous Pet
+7: Search Pet by Mood
+8: Sort Pets by Hunger
+9: Manage Care Queue
+10: Monitor Pet Health
+0: Logout
+Enter choice: 0
+Logging out...
+=== Virtual Pet Sanctuary Simulator ===
+1: Login
+2: Register
+3: Continue as Guest
+0: Exit
+Enter choice: 3
+Guest, Enter your name:
+Hassan
+Welcome, Hassan What would you like to do?
+=== Guest Menu ===
+1. View pets for sale
+2. Buy a pet
+3. Cycle to next pet
+4. Mark pet as favorite
+5. View favorite pets
+6. View pet events
+7. Search pets by name
+8. Sort pets by age
+9. View recent pet views
+10. Request pet interaction
+0. Back to main menu
+Enter choice: 1
+=== Available pets for sale ===
+Pet [ID=1, Name=Max, For Sale=true, Age=2, Price=$150.0, Hunger=40, Health=90, Mood=60, Type=dog]
+=== Guest Menu ===
+1. View pets for sale
+2. Buy a pet
+3. Cycle to next pet
+4. Mark pet as favorite
+5. View favorite pets
+6. View pet events
+7. Search pets by name
+8. Sort pets by age
+9. View recent pet views
+10. Request pet interaction
+0. Back to main menu
+Enter choice: 2
+Enter pet name to buy: Max
+Pet removed successfully.
+Attempting to save pets to: pets.txt
+Absolute path: D:\Java\DSA_PROJECTS\pets.txt
+No pets to save. List is empty.
+Invalid amount. Funds not added.
+Congratulations, you have bought Max for $150.0
+=== Guest Menu ===
+1. View pets for sale
+2. Buy a pet
+3. Cycle to next pet
+4. Mark pet as favorite
+5. View favorite pets
+6. View pet events
+7. Search pets by name
+8. Sort pets by age
+9. View recent pet views
+10. Request pet interaction
+0. Back to main menu
+Enter choice: 0
+Returning to main menu....
+=== Virtual Pet Sanctuary Simulator ===
+1: Login
+2: Register
+3: Continue as Guest
+0: Exit
+Enter choice: 1
+Login User
+Enter Email: fahad@gift.edu.pk
+Enter Password: 12345678
+Enter Role (C for CareTaker, M for Manager): m
+Login successful, user instance:
+___User Details__
+ Name: Fahad Sial, Email: fahad@gift.edu.pk, Password: 12345678, Age: 20, Role: M
+Login Successful! Welcome, Fahad Sial
+Manager instance:
+___User Details__
+ Name: Fahad Sial, Email: fahad@gift.edu.pk, Password: 12345678, Age: 20, Role: M, email: fahad@gift.edu.pk
+Attempting to load assignments from: assignments.txt
+Reading assignment: ali@gmail.com,1
+Found user: Ali khan, instance:
+___User Details__
+ Name: Ali khan, Email: ali@gmail.com, Password: 12345678, Age: 20, Role: C
+Pet not found: ID 1
+Pet not found for ID: 1
+Total assignments loaded: 0
+=== Manager Menu ===
+1: Add Funds
+2: Purchase Upgrades
+3: Generate Report
+4: Add Pet to Sanctuary
+5: Remove Pet from Sanctuary
+6: Manage Events
+7: Assign Pet to CareTaker
+8: Search Pets by Price Range
+9: Undo Last Fund Change
+10: Prioritize Critical Pets
+11: Track Pet Interactions
+0: Logout
+Enter choice: 4
+Enter pet type (dog/rabbit/horse/lion):
+horse
+Enter pet ID: 2
+Enter pet name: Fluffy
+Is pet for sale (true/false): true
+Enter pet age: 20
+Enter pet price: $200
+Pet added successfully.
+Attempting to save pets to: pets.txt
+Absolute path: D:\Java\DSA_PROJECTS\pets.txt
+Writing pet: 2,Fluffy,true,20,200.0,50,100,50,horse
+Pets saved successfully to: D:\Java\DSA_PROJECTS\pets.txt
+=== Manager Menu ===
+1: Add Funds
+2: Purchase Upgrades
+3: Generate Report
+4: Add Pet to Sanctuary
+5: Remove Pet from Sanctuary
+6: Manage Events
+7: Assign Pet to CareTaker
+8: Search Pets by Price Range
+9: Undo Last Fund Change
+10: Prioritize Critical Pets
+11: Track Pet Interactions
+0: Logout
+Enter choice: 0
+Logging out...
+=== Virtual Pet Sanctuary Simulator ===
+1: Login
+2: Register
+3: Continue as Guest
+0: Exit
+Enter choice: 1
+Login User
+Enter Email: aliKhan
+Invalid Email Format. Enter again: ali@gmail.com
+Enter Password: 2234456667
+Enter Role (C for CareTaker, M for Manager): c
+Invalid credentials for email: ali@gmail.com, role: C
+=== Virtual Pet Sanctuary Simulator ===
+1: Login
+2: Register
+3: Continue as Guest
+0: Exit
+Enter choice: 3
+Guest, Enter your name:
+Hassan
+Welcome, Hassan What would you like to do?
+=== Guest Menu ===
+1. View pets for sale
+2. Buy a pet
+3. Cycle to next pet
+4. Mark pet as favorite
+5. View favorite pets
+6. View pet events
+7. Search pets by name
+8. Sort pets by age
+9. View recent pet views
+10. Request pet interaction
+0. Back to main menu
+Enter choice: 3
+Current pet: Fluffy
+=== Guest Menu ===
+1. View pets for sale
+2. Buy a pet
+3. Cycle to next pet
+4. Mark pet as favorite
+5. View favorite pets
+6. View pet events
+7. Search pets by name
+8. Sort pets by age
+9. View recent pet views
+10. Request pet interaction
+0. Back to main menu
+Enter choice: 4
+Marked as favorite: Fluffy
+=== Guest Menu ===
+1. View pets for sale
+2. Buy a pet
+3. Cycle to next pet
+4. Mark pet as favorite
+5. View favorite pets
+6. View pet events
+7. Search pets by name
+8. Sort pets by age
+9. View recent pet views
+10. Request pet interaction
+0. Back to main menu
+Enter choice: 5
+=== Favorite Pets ===
+Pet [ID=2, Name=Fluffy, For Sale=true, Age=20, Price=$200.0, Hunger=50, Health=100, Mood=50, Type=horse]
+=== Guest Menu ===
+1. View pets for sale
+2. Buy a pet
+3. Cycle to next pet
+4. Mark pet as favorite
+5. View favorite pets
+6. View pet events
+7. Search pets by name
+8. Sort pets by age
+9. View recent pet views
+10. Request pet interaction
+0. Back to main menu
+Enter choice: 6
+Viewing pet-related events..
+Event: Manual | Date: 2025-08-03T11:12:29.054330600 | Resolved: No
+=== Guest Menu ===
+1. View pets for sale
+2. Buy a pet
+3. Cycle to next pet
+4. Mark pet as favorite
+5. View favorite pets
+6. View pet events
+7. Search pets by name
+8. Sort pets by age
+9. View recent pet views
+10. Request pet interaction
+0. Back to main menu
+Enter choice: 7
+Enter Pet name: Fluffy
+Pet found: Name: Fluffy, Type: Horse, Age: 20, Price: $200.0
+=== Guest Menu ===
+1. View pets for sale
+2. Buy a pet
+3. Cycle to next pet
+4. Mark pet as favorite
+5. View favorite pets
+6. View pet events
+7. Search pets by name
+8. Sort pets by age
+9. View recent pet views
+10. Request pet interaction
+0. Back to main menu
+Enter choice: 8
+Pets sorted by age (ascending):
+Name: Fluffy, Type: Horse, Age: 20, Price: $200.0
+=== Guest Menu ===
+1. View pets for sale
+2. Buy a pet
+3. Cycle to next pet
+4. Mark pet as favorite
+5. View favorite pets
+6. View pet events
+7. Search pets by name
+8. Sort pets by age
+9. View recent pet views
+10. Request pet interaction
+0. Back to main menu
+Enter choice: 9
+No recent pet views.
+=== Guest Menu ===
+1. View pets for sale
+2. Buy a pet
+3. Cycle to next pet
+4. Mark pet as favorite
+5. View favorite pets
+6. View pet events
+7. Search pets by name
+8. Sort pets by age
+9. View recent pet views
+10. Request pet interaction
+0. Back to main menu
+Enter choice: 1
+=== Available pets for sale ===
+Pet [ID=2, Name=Fluffy, For Sale=true, Age=20, Price=$200.0, Hunger=50, Health=100, Mood=50, Type=horse]
+=== Guest Menu ===
+1. View pets for sale
+2. Buy a pet
+3. Cycle to next pet
+4. Mark pet as favorite
+5. View favorite pets
+6. View pet events
+7. Search pets by name
+8. Sort pets by age
+9. View recent pet views
+10. Request pet interaction
+0. Back to main menu
+Enter choice: 9
+No recent pet views.
+=== Guest Menu ===
+1. View pets for sale
+2. Buy a pet
+3. Cycle to next pet
+4. Mark pet as favorite
+5. View favorite pets
+6. View pet events
+7. Search pets by name
+8. Sort pets by age
+9. View recent pet views
+10. Request pet interaction
+0. Back to main menu
+Enter choice: 10
+Enter pet name for interaction request: Fluffy
+Interaction request added for: Fluffy
+Pending Interaction Requests:
+Name: Fluffy, Type: Horse
+=== Guest Menu ===
+1. View pets for sale
+2. Buy a pet
+3. Cycle to next pet
+4. Mark pet as favorite
+5. View favorite pets
+6. View pet events
+7. Search pets by name
+8. Sort pets by age
+9. View recent pet views
+10. Request pet interaction
+0. Back to main menu
+Enter choice: 0
+Returning to main menu....
+=== Virtual Pet Sanctuary Simulator ===
+1: Login
+2: Register
+3: Continue as Guest
+0: Exit
+Enter choice: 0
+Exiting...
+D:\Java\DSA_PROJECTS> har line ko review karo

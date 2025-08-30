@@ -1,0 +1,685 @@
+# TestSequence.txt
+
+Yeh file Virtual Pet Sanctuary Simulator ke har feature aur sub-feature ko user-driven sequence mein test karti hai, including Manager ke Events, Social Network, aur Adventures ke sub-menus. Har test case mein method, input, expected output, aur data structure mention hai. Project 16 pets (4 critical, health < 50: Buddy, SnowBall, Thumper, Coco), 3 users (Fahad: Manager, Ali: CareTaker, Hassan: Guest), aur files (users.txt, pets.txt, assignments.txt, funds.txt, events.txt) ke saath chalta hai. Sequence user flow follow karti hai: main menu → login/register → manager/caretaker/guest actions → sub-menus.
+
+## Sequence 1: Main Menu (VirtualPetSanctuarySimulator.start)
+- **Feature**: Main menu display.
+- **Method**: VirtualPetSanctuarySimulator.start()
+- **Input**: None
+- **Expected Output**:
+  ```
+  === Virtual Pet Sanctuary Simulator ===
+  1: Login
+  2: Register
+  3: Continue as Guest
+  0: Exit
+  ```
+- **Data Structure**: None
+- **Test Case Description**: Main menu display. Ensure 4 options show correctly.
+
+## Sequence 2: Register Users (UserManager.register)
+- **Feature**: Users register karna.
+- **Method**: UserManager.register()
+- **Input**:
+  - Choice: 2
+  - User 1: "Fahad Sial", "fahad@gift.edu.pk", "12345678", 20, 'M'
+  - User 2: "Ali Khan", "ali@gmail.com", "12345678", 20, 'C'
+  - User 3: "Hassan Raza", "hassan@gmail.com", "12345678", 25, 'G'
+  - Invalid Input: Email: "invalid", Password: "", Role: 'X'
+- **Expected Output**:
+  - Valid: "Registration successful for M: Fahad Sial, instance: ___User Details__ Name: Fahad Sial, Email: fahad@gift.edu.pk, Password: 12345678, Age: 20, Role: M"
+  - Invalid: "Invalid email format." or "Invalid role. Please enter C, M, or G."
+  - users.txt:
+    ```
+    Fahad Sial,fahad@gift.edu.pk,12345678,20,M
+    Ali Khan,ali@gmail.com,12345678,20,C
+    Hassan Raza,hassan@gmail.com,12345678,25,G
+    ```
+- **Data Structure**:
+  - ArrayList<User> (usersLists): Stores all users.
+  - Binary Search Tree (UserNodeBST): Email-based organization.
+- **Test Case Description**: Option 2 se 3 users register. Check invalid email/role handling aur users.txt.
+
+## Sequence 3: Login as Manager (UserManager.loginMenu)
+- **Feature**: Manager login.
+- **Method**: UserManager.loginMenu()
+- **Input**:
+  - Choice: 1
+  - Email: "fahad@gift.edu.pk", Password: "12345678", Role: 'M'
+  - Invalid Input: Email: "wrong@gift.edu.pk", Password: "wrong", Role: 'M'
+- **Expected Output**:
+  - Valid: "Login Successful! Welcome, Fahad Sial"
+  - Manager Menu:
+    ```
+    === Manager Menu ===
+    1: Add Funds
+    2: Purchase Upgrades
+    3: Generate Report
+    4: Add Pet to Sanctuary
+    5: Remove Pet from Sanctuary
+    6: Manage Events
+    7: Assign Pet to CareTaker
+    8: Search Pets by Price Range
+    9: Undo Last Fund Change
+    10: Prioritize Critical Pets
+    11: Track Pet Interactions
+    12: Analyze Pet Social Network
+    13: Manage Pet Adventures
+    0: Logout
+    ```
+  - Invalid: "Invalid credentials."
+- **Data Structure**: ArrayList<User>, Binary Search Tree (UserNodeBST)
+- **Test Case Description**: Option 1 se Fahad login. Check case-insensitive email aur invalid credentials handling.
+
+## Sequence 4: Add Pets (Manager.addPetToSanctuary)
+- **Feature**: Pets add karna with health, mood, hunger inputs.
+- **Method**: Manager.addPetToSanctuary(Sanctuary sanctuary, Scanner scanner)
+- **Input**:
+  - Manager Menu Choice: 4
+  - Pets (16, with health, mood, hunger as per pets.txt):
+    1. Type: "dog", ID: 1, Name: "Max", ForSale: true, Age: 2, Price: 150.0, Health: 70, Mood: 80, Hunger: 60
+    2. Type: "rabbit", ID: 2, Name: "Bunny", ForSale: true, Age: 1, Price: 100.0, Health: 65, Mood: 70, Hunger: 50
+    3. Type: "horse", ID: 3, Name: "Fluffy", ForSale: true, Age: 20, Price: 200.0, Health: 80, Mood: 90, Hunger: 55
+    4. Type: "lion", ID: 4, Name: "Simba", ForSale: true, Age: 5, Price: 1000.0, Health: 75, Mood: 85, Hunger: 70
+    5. Type: "dog", ID: 5, Name: "Buddy", ForSale: true, Age: 3, Price: 120.0, Health: 45, Mood: 60, Hunger: 40
+    6. Type: "rabbit", ID: 6, Name: "SnowBall", ForSale: false, Age: 3, Price: 120.0, Health: 30, Mood: 50, Hunger: 35
+    7. Type: "horse", ID: 7, Name: "Thunder", ForSale: true, Age: 10, Price: 300.0, Health: 85, Mood: 95, Hunger: 65
+    8. Type: "lion", ID: 8, Name: "Nala", ForSale: true, Age: 4, Price: 110.0, Health: 70, Mood: 80, Hunger: 60
+    9. Type: "dog", ID: 9, Name: "Rocky", ForSale: true, Age: 1, Price: 100.0, Health: 65, Mood: 75, Hunger: 55
+    10. Type: "rabbit", ID: 10, Name: "Thumper", ForSale: true, Age: 1, Price: 100.0, Health: 40, Mood: 75, Hunger: 55
+    11. Type: "horse", ID: 11, Name: "Spirit", ForSale: false, Age: 15, Price: 20.0, Health: 80, Mood: 90, Hunger: 60
+    12. Type: "lion", ID: 12, Name: "Mufasa", ForSale: true, Age: 6, Price: 1100.0, Health: 75, Mood: 85, Hunger: 70
+    13. Type: "dog", ID: 13, Name: "Luna", ForSale: true, Age: 2, Price: 130.0, Health: 70, Mood: 80, Hunger: 60
+    14. Type: "rabbit", ID: 14, Name: "Coco", ForSale: true, Age: 1, Price: 95.0, Health: 35, Mood: 70, Hunger: 50
+    15. Type: "dog", ID: 15, Name: "Sparrow", ForSale: true, Age: 1, Price: 100.0, Health: 10, Mood: 10, Hunger: 10
+    16. Type: "dog", ID: 16, Name: "FLOW", ForSale: false, Age: 10, Price: 10.0, Health: 10, Mood: 10, Hunger: 10
+  - Invalid Inputs to Test:
+    - Pet Type: "2" → "Invalid pet type. Please enter dog, rabbit, horse, or lion"
+    - Pet ID: "sda" → "Invalid input. Please enter a valid integer for pet ID"
+    - Pet ID: "-1" → "Pet ID must be a positive integer. Try again"
+    - Pet ID: "1" (if exists) → "Pet ID already exists. Try a different ID"
+    - Pet Name: "" → "Pet name cannot be empty. Try again"
+    - IsPetForSale: "2" → "Invalid input. Please enter true or false"
+    - Age: "abc" → "Invalid input. Please enter a valid integer for age"
+    - Age: "-5" → "Age cannot be negative. Try again"
+    - Price: "xyz" → "Invalid input. Please enter a valid number for price"
+    - Price: "-10" → "Price cannot be negative. Try again"
+    - Health: "abc" → "Invalid input. Please enter a valid integer for health"
+    - Health: "150" → "Health must be between 0 and 100. Try again"
+    - Mood: "-10" → "Mood must be between 0 and 100. Try again"
+    - Hunger: "abc" → "Invalid input. Please enter a valid integer for hunger"
+- **Expected Output**:
+  - For each valid pet: "Pet added successfully."
+  - pets.txt:
+    ```
+    1,Max,true,2,150.0,60,70,80,dog
+    2,Bunny,true,1,100.0,50,65,70,rabbit
+    3,Fluffy,true,20,200.0,55,80,90,horse
+    4,Simba,true,5,1000.0,70,75,85,lion
+    5,Buddy,true,3,120.0,40,45,60,dog
+    6,SnowBall,false,3,120.0,35,30,50,rabbit
+    7,Thunder,true,10,300.0,65,85,95,horse
+    8,Nala,true,4,110.0,60,70,80,lion
+    9,Rocky,true,1,100.0,55,65,75,dog
+    10,Thumper,true,1,100.0,55,40,75,rabbit
+    11,Spirit,false,15,20.0,60,80,90,horse
+    12,Mufasa,true,6,1100.0,70,75,85,lion
+    13,Luna,true,2,130.0,60,70,80,dog
+    14,Coco,true,1,95.0,50,35,70,rabbit
+    15,Sparrow,true,1,100.0,10,10,10,dog
+    16,FLOW,false,10,10.0,10,10,10,dog
+    ```
+  - For invalid inputs: Appropriate error messages aur retry prompts as listed above.
+- **Data Structure**:
+  - Singly Linked List (PetNode): Pets store.
+  - Binary Search Tree (PetNodeBst): ID-based organization.
+- **Test Case Description**: Option 4 se 16 pets add karo. Check invalid inputs handle hote hain aur pets.txt mein user-defined health, mood, hunger save hote hain.
+
+## Sequence 5: Add Funds (Manager.addFunds)
+- **Feature**: Sanctuary mein funds add karna.
+- **Method**: Manager.addFunds(double amount)
+- **Input**:
+  - Manager Menu Choice: 1
+  - Amount: 1500.0
+  - Invalid Input: Amount: "-100"
+- **Expected Output**:
+  - Valid: "Funds added: $1500.0. Total funds: $1500.0"
+  - Invalid: "Amount cannot be negative. Try again."
+  - funds.txt: "1500.0"
+- **Data Structure**:
+  - Stack<Double> (fundHistory): Tracks fund changes.
+- **Test Case Description**: Option 1 se funds add. Check negative input handling aur funds.txt.
+
+## Sequence 6: Purchase Upgrades (Manager.purchaseUpgrades)
+- **Feature**: Upgrades khareedna.
+- **Method**: Manager.purchaseUpgrades()
+- **Input**:
+  - Manager Menu Choice: 2
+  - Upgrade Cost: 200.0
+  - Invalid Input: Cost: 2000.0 (exceeds total funds)
+- **Expected Output**:
+  - Valid: "Upgrade purchased for $200.0. Remaining funds: $1300.0"
+  - Invalid: "Insufficient funds. Total funds: $1500.0"
+  - funds.txt: "1300.0"
+- **Data Structure**:
+  - Stack<Double> (fundHistory): Update fund history.
+- **Test Case Description**: Option 2 se upgrade purchase. Check insufficient funds handling.
+
+## Sequence 7: Generate Report (Manager.generateReport)
+- **Feature**: Sanctuary report generate karna with critical pets.
+- **Method**: Manager.generateReport()
+- **Input**:
+  - Manager Menu Choice: 3
+- **Expected Output**:
+  - ```
+    === Sanctuary Report ===
+    Total Funds: $1300.0
+    Total Pets: 16
+    Pets Available for Sale: 13
+    Critical Pets:
+    Buddy (Health: 45)
+    SnowBall (Health: 30)
+    Thumper (Health: 40)
+    Coco (Health: 35)
+    Sparrow (Health: 10)
+    FLOW (Health: 10)
+    ```
+- **Data Structure**:
+  - Singly Linked List (PetNode): Pet count.
+  - Doubly Linked List (PetDoublyLinkedList): Critical pets.
+- **Test Case Description**: Option 3 se report generate. Check funds, pet counts, aur critical pets (health < 50).
+
+## Sequence 8: Remove Pet from Sanctuary (Manager.removePetFromSanctuary)
+- **Feature**: Pet remove karna by ID.
+- **Method**: Manager.removePetFromSanctuary(int petId)
+- **Input**:
+  - Manager Menu Choice: 5
+  - Pet ID: 9 (Rocky)
+  - Invalid Input: Pet ID: 99
+- **Expected Output**:
+  - Valid: "Pet Rocky removed successfully."
+  - Invalid: "Pet not found: ID 99"
+  - pets.txt: Updated without "9,Rocky,true,1,100.0,55,65,75,dog"
+- **Data Structure**:
+  - Singly Linked List (PetNode): Remove pet.
+  - Binary Search Tree (PetNodeBst): Update ID-based tree.
+- **Test Case Description**: Option 5 se pet remove by ID. Check invalid ID handling aur pets.txt.
+
+## Sequence 9: Manage Events - View All Events (Manager.viewAllEvents)
+- **Feature**: Saare events dekhna.
+- **Method**: Manager.viewAllEvents()
+- **Input**:
+  - Manager Menu Choice: 6
+  - Event Menu Choice: 1
+  - Event: "Feed Max", Priority: 1
+- **Expected Output**:
+  - "All Events: Feed Max (Priority: 1)"
+  - events.txt: "Feed Max,1"
+- **Data Structure**:
+  - PriorityQueue<Event> (eventQueue): Event storage.
+- **Test Case Description**: Option 6 → 1 se events dekhna. Check events.txt.
+
+## Sequence 10: Manage Events - View Unresolved Events (Manager.viewUnresolvedEvents)
+- **Feature**: Unresolved events dekhna.
+- **Method**: Manager.viewUnresolvedEvents()
+- **Input**:
+  - Manager Menu Choice: 6
+  - Event Menu Choice: 2
+- **Expected Output**:
+  - "Unresolved Events: Feed Max (Priority: 1)"
+- **Data Structure**:
+  - PriorityQueue<Event> (eventQueue): Filter unresolved events.
+- **Test Case Description**: Option 6 → 2 se unresolved events dekhna.
+
+## Sequence 11: Manage Events - Resolve an Event (Manager.resolveEvent)
+- **Feature**: Event resolve karna.
+- **Method**: Manager.resolveEvent(int eventId)
+- **Input**:
+  - Manager Menu Choice: 6
+  - Event Menu Choice: 3
+  - Event ID: 1
+  - Invalid Input: Event ID: 99
+- **Expected Output**:
+  - Valid: "Event Feed Max resolved."
+  - Invalid: "Event not found: ID 99"
+  - events.txt: Updated without "Feed Max,1"
+- **Data Structure**:
+  - PriorityQueue<Event> (eventQueue): Remove resolved event.
+- **Test Case Description**: Option 6 → 3 se event resolve. Check invalid ID handling.
+
+## Sequence 12: Manage Events - Manage Event Dependencies (Manager.manageEventDependencies)
+- **Feature**: Event dependencies manage karna.
+- **Method**: Manager.manageEventDependencies()
+- **Input**:
+  - Manager Menu Choice: 6
+  - Event Menu Choice: 4
+  - Event: "Feed Max", Dependent Event: "Play Max"
+- **Expected Output**:
+  - "Dependency added: Feed Max -> Play Max"
+- **Data Structure**:
+  - Graph (EventGraph): Event dependencies.
+- **Test Case Description**: Option 6 → 4 se event dependencies add. Check graph structure.
+
+## Sequence 13: Manage Events - Undo Event Actions (Manager.undoEventActions)
+- **Feature**: Event actions undo karna.
+- **Method**: Manager.undoEventActions()
+- **Input**:
+  - Manager Menu Choice: 6
+  - Event Menu Choice: 5
+- **Expected Output**:
+  - "Last event action undone: Feed Max"
+  - events.txt: Updated to restore "Feed Max,1"
+- **Data Structure**:
+  - Stack<Event> (eventHistory): Undo event actions.
+- **Test Case Description**: Option 6 → 5 se event action undo. Check events.txt.
+
+## Sequence 14: Manage Events - View Event Timeline (Manager.viewEventTimeline)
+- **Feature**: Event timeline dekhna.
+- **Method**: Manager.viewEventTimeline()
+- **Input**:
+  - Manager Menu Choice: 6
+  - Event Menu Choice: 6
+- **Expected Output**:
+  - "Event Timeline: Feed Max (Priority: 1)"
+- **Data Structure**:
+  - LinkedList<Event> (eventTimeline): Event history.
+- **Test Case Description**: Option 6 → 6 se event timeline dekhna.
+
+## Sequence 15: Manage Events - Search Events by Date Range (Manager.searchEventsByDateRange)
+- **Feature**: Date range ke hisaab se events search karna.
+- **Method**: Manager.searchEventsByDateRange(String startDate, String endDate)
+- **Input**:
+  - Manager Menu Choice: 6
+  - Event Menu Choice: 7
+  - Start Date: "2025-08-01", End Date: "2025-08-10"
+  - Invalid Input: Start Date: "invalid", End Date: "2025-08-10"
+- **Expected Output**:
+  - Valid: "Events from 2025-08-01 to 2025-08-10: Feed Max"
+  - Invalid: "Invalid date format."
+- **Data Structure**:
+  - LinkedList<Event> (eventTimeline): Search events.
+- **Test Case Description**: Option 6 → 7 se date range search. Check invalid date handling.
+
+## Sequence 16: Manage Events - View Critical Events (Manager.viewCriticalEvents)
+- **Feature**: Critical events dekhna.
+- **Method**: Manager.viewCriticalEvents()
+- **Input**:
+  - Manager Menu Choice: 6
+  - Event Menu Choice: 8
+- **Expected Output**:
+  - "Critical Events: Feed Max (Priority: 1)"
+- **Data Structure**:
+  - PriorityQueue<Event> (eventQueue): Filter critical events.
+- **Test Case Description**: Option 6 → 8 se critical events dekhna.
+
+## Sequence 17: Manage Events - Trigger Random Event (Manager.triggerRandomEvent)
+- **Feature**: Random event trigger karna.
+- **Method**: Manager.triggerRandomEvent()
+- **Input**:
+  - Manager Menu Choice: 6
+  - Event Menu Choice: 9
+- **Expected Output**:
+  - "Random Event Triggered: Play Max (Priority: 2)"
+  - events.txt: "Play Max,2"
+- **Data Structure**:
+  - PriorityQueue<Event> (eventQueue): Add random event.
+- **Test Case Description**: Option 6 → 9 se random event trigger. Check events.txt.
+
+## Sequence 18: Assign Pet to CareTaker (Manager.assignPetToCareTaker)
+- **Feature**: Pet ko CareTaker assign karna.
+- **Method**: Manager.assignPetToCareTaker(int petId, String careTakerEmail)
+- **Input**:
+  - Manager Menu Choice: 7
+  - Pet ID: 1, CareTaker Email: "ali@gmail.com"
+  - Invalid Input: Pet ID: 99, Email: "invalid@gmail.com"
+- **Expected Output**:
+  - Valid: "Pet Max assigned to Ali Khan."
+  - Invalid: "Pet not found: ID 99" or "CareTaker not found: invalid@gmail.com"
+  - assignments.txt: "1,ali@gmail.com"
+- **Data Structure**:
+  - HashMap<Integer, String> (petAssignments): Pet ID to CareTaker email mapping.
+- **Test Case Description**: Option 7 se pet assign. Check invalid pet ID/email aur assignments.txt.
+
+## Sequence 19: Search Pets by Price Range (Manager.searchPetsByPriceRange)
+- **Feature**: Price range ke hisaab se pets search karna.
+- **Method**: Manager.searchPetsByPriceRange(double minPrice, double maxPrice)
+- **Input**:
+  - Manager Menu Choice: 8
+  - Min Price: 100.0, Max Price: 200.0
+  - Invalid Input: Min Price: -10, Max Price: 50
+- **Expected Output**:
+  - Valid: "Pets in price range $100.0-$200.0: Max, Bunny, Buddy, Nala, Thumper, Luna, Sparrow"
+  - Invalid: "Invalid price range. Min price cannot be negative."
+- **Data Structure**:
+  - Singly Linked List (PetNode): Search pets.
+- **Test Case Description**: Option 8 se price range search. Check invalid price handling.
+
+## Sequence 20: Undo Last Fund Change (Manager.undoLastFundChange)
+- **Feature**: Last fund change undo karna.
+- **Method**: Manager.undoLastFundChange()
+- **Input**:
+  - Manager Menu Choice: 9
+- **Expected Output**:
+  - "Last fund change undone. Total funds: $1500.0"
+  - funds.txt: "1500.0"
+- **Data Structure**:
+  - Stack<Double> (fundHistory): Pop last fund change.
+- **Test Case Description**: Option 9 se fund change undo. Check funds.txt.
+
+## Sequence 21: Prioritize Critical Pets (PetManager.prioritizeCriticalPets)
+- **Feature**: Critical pets (health < 50) prioritize karna.
+- **Method**: PetManager.prioritizeCriticalPets()
+- **Input**:
+  - Manager Menu Choice: 10
+- **Expected Output**:
+  - ```
+    Critical pets (sorted by health):
+    Sparrow (Health: 10)
+    FLOW (Health: 10)
+    SnowBall (Health: 30)
+    Coco (Health: 35)
+    Thumper (Health: 40)
+    Buddy (Health: 45)
+    ```
+- **Data Structure**:
+  - Doubly Linked List (PetDoublyLinkedList): Critical pets navigate.
+- **Test Case Description**: Option 10 se critical pets list. Check ke 6 pets (health < 50) sorted by health show hote hain.
+
+## Sequence 22: Track Pet Interactions (Manager.trackPetInteractions)
+- **Feature**: Pet interactions track karna.
+- **Method**: Manager.trackPetInteractions(int petId)
+- **Input**:
+  - Manager Menu Choice: 11
+  - Pet ID: 1
+  - Invalid Input: Pet ID: 99
+- **Expected Output**:
+  - Valid: "Interactions for Max: Fed, Played"
+  - Invalid: "Pet not found: ID 99"
+- **Data Structure**:
+  - LinkedList<String> (loadHistory): Interaction history.
+- **Test Case Description**: Option 11 se interactions track. Check invalid pet ID aur interaction data display.
+
+## Sequence 23: Analyze Pet Social Network - Recommend Compatible Pets (Manager.recommendCompatiblePets)
+- **Feature**: Compatible pets recommend karna.
+- **Method**: Manager.recommendCompatiblePets(int petId)
+- **Input**:
+  - Manager Menu Choice: 12
+  - Social Network Menu Choice: 1
+  - Pet ID: 1 (Max)
+  - Invalid Input: Pet ID: 99
+- **Expected Output**:
+  - Valid: "Compatible pets for Max: Buddy, Luna"
+  - Invalid: "Pet not found: ID 99"
+- **Data Structure**:
+  - Graph (PetGraph): Pet relationships.
+- **Test Case Description**: Option 12 → 1 se compatible pets recommend. Check invalid pet ID.
+
+## Sequence 24: Analyze Pet Social Network - Schedule Social Event (Manager.scheduleSocialEvent)
+- **Feature**: Social event schedule karna.
+- **Method**: Manager.scheduleSocialEvent(int petId1, int petId2)
+- **Input**:
+  - Manager Menu Choice: 12
+  - Social Network Menu Choice: 2
+  - Pet ID 1: 1 (Max), Pet ID 2: 5 (Buddy)
+  - Invalid Input: Pet ID 1: 99, Pet ID 2: 5
+- **Expected Output**:
+  - Valid: "Social event scheduled: Max and Buddy"
+  - Invalid: "Pet not found: ID 99"
+  - events.txt: "Social Event: Max-Buddy,1"
+- **Data Structure**:
+  - PriorityQueue<Event> (eventQueue): Add social event.
+- **Test Case Description**: Option 12 → 2 se social event schedule. Check invalid pet ID.
+
+## Sequence 25: Analyze Pet Social Network - Prioritize Low-Mood Pets (Manager.prioritizeLowMoodPets)
+- **Feature**: Low-mood pets (mood < 50) prioritize karna.
+- **Method**: Manager.prioritizeLowMoodPets()
+- **Input**:
+  - Manager Menu Choice: 12
+  - Social Network Menu Choice: 3
+- **Expected Output**:
+  - "Low-Mood Pets: Sparrow (Mood: 10), FLOW (Mood: 10)"
+- **Data Structure**:
+  - Doubly Linked List (PetDoublyLinkedList): Low-mood pets navigate.
+- **Test Case Description**: Option 12 → 3 se low-mood pets list. Check mood < 50 pets.
+
+## Sequence 26: Analyze Pet Social Network - Undo Last Interaction (Manager.undoLastInteraction)
+- **Feature**: Last social interaction undo karna.
+- **Method**: Manager.undoLastInteraction()
+- **Input**:
+  - Manager Menu Choice: 12
+  - Social Network Menu Choice: 4
+- **Expected Output**:
+  - "Last interaction undone: Max-Buddy"
+  - events.txt: Updated without "Social Event: Max-Buddy,1"
+- **Data Structure**:
+  - Stack<Interaction> (interactionHistory): Undo interaction.
+- **Test Case Description**: Option 12 → 4 se interaction undo. Check events.txt.
+
+## Sequence 27: Analyze Pet Social Network - Display Interaction Log (Manager.displayInteractionLog)
+- **Feature**: Interaction log dekhna.
+- **Method**: Manager.displayInteractionLog()
+- **Input**:
+  - Manager Menu Choice: 12
+  - Social Network Menu Choice: 5
+- **Expected Output**:
+  - "Interaction Log: Max-Buddy (Social Event)"
+- **Data Structure**:
+  - LinkedList<String> (interactionLog): Interaction history.
+- **Test Case Description**: Option 12 → 5 se interaction log dekhna.
+
+## Sequence 28: Manage Pet Adventures - Start Adventure for a Pet (Manager.startAdventure)
+- **Feature**: Pet ke liye adventure start karna.
+- **Method**: Manager.startAdventure(int petId)
+- **Input**:
+  - Manager Menu Choice: 13
+  - Adventure Menu Choice: 1
+  - Pet ID: 1 (Max)
+  - Invalid Input: Pet ID: 99
+- **Expected Output**:
+  - Valid: "Adventure started: Max explores forest"
+  - Invalid: "Pet not found: ID 99"
+  - events.txt: "Max explores forest,1"
+- **Data Structure**:
+  - PriorityQueue<Event> (eventQueue): Add adventure event.
+- **Test Case Description**: Option 13 → 1 se adventure start. Check invalid pet ID.
+
+## Sequence 29: Manage Pet Adventures - Schedule Adventure Quest for Two Pets (Manager.scheduleAdventureQuest)
+- **Feature**: Do pets ke liye adventure quest schedule karna.
+- **Method**: Manager.scheduleAdventureQuest(int petId1, int petId2)
+- **Input**:
+  - Manager Menu Choice: 13
+  - Adventure Menu Choice: 2
+  - Pet ID 1: 1 (Max), Pet ID 2: 5 (Buddy)
+  - Invalid Input: Pet ID 1: 99, Pet ID 2: 5
+- **Expected Output**:
+  - Valid: "Adventure quest scheduled: Max and Buddy"
+  - Invalid: "Pet not found: ID 99"
+  - events.txt: "Adventure Quest: Max-Buddy,1"
+- **Data Structure**:
+  - PriorityQueue<Event> (eventQueue): Add adventure quest.
+- **Test Case Description**: Option 13 → 2 se adventure quest schedule. Check invalid pet ID.
+
+## Sequence 30: Manage Pet Adventures - Prioritize Low-Health Pets for Adventure (Manager.prioritizeLowHealthPets)
+- **Feature**: Low-health pets (health < 50) ko adventure ke liye prioritize karna.
+- **Method**: Manager.prioritizeLowHealthPets()
+- **Input**:
+  - Manager Menu Choice: 13
+  - Adventure Menu Choice: 3
+- **Expected Output**:
+  - ```
+    Low-Health Pets for Adventure:
+    Sparrow (Health: 10)
+    FLOW (Health: 10)
+    SnowBall (Health: 30)
+    Coco (Health: 35)
+    Thumper (Health: 40)
+    Buddy (Health: 45)
+    ```
+- **Data Structure**:
+  - Doubly Linked List (PetDoublyLinkedList): Low-health pets navigate.
+- **Test Case Description**: Option 13 → 3 se low-health pets list. Check health < 50 pets.
+
+## Sequence 31: Manage Pet Adventures - Undo Last Move (Manager.undoLastMove)
+- **Feature**: Last adventure move undo karna.
+- **Method**: Manager.undoLastMove()
+- **Input**:
+  - Manager Menu Choice: 13
+  - Adventure Menu Choice: 4
+- **Expected Output**:
+  - "Last adventure move undone: Max explores forest"
+  - events.txt: Updated without "Max explores forest,1"
+- **Data Structure**:
+  - Stack<Adventure> (adventureHistory): Undo adventure move.
+- **Test Case Description**: Option 13 → 4 se adventure move undo. Check events.txt.
+
+## Sequence 32: Manage Pet Adventures - Display Adventure Log (Manager.displayAdventureLog)
+- **Feature**: Adventure log dekhna.
+- **Method**: Manager.displayAdventureLog()
+- **Input**:
+  - Manager Menu Choice: 13
+  - Adventure Menu Choice: 5
+- **Expected Output**:
+  - "Adventure Log: Max explores forest, Max-Buddy (Adventure Quest)"
+- **Data Structure**:
+  - LinkedList<String> (adventureLog): Adventure history.
+- **Test Case Description**: Option 13 → 5 se adventure log dekhna.
+
+## Sequence 33: Login as CareTaker (UserManager.loginMenu)
+- **Feature**: CareTaker login.
+- **Method**: UserManager.loginMenu()
+- **Input**:
+  - Choice: 1
+  - Email: "ali@gmail.com", Password: "12345678", Role: 'C'
+- **Expected Output**:
+  - "Login Successful! Welcome, Ali Khan"
+  - CareTaker Menu:
+    ```
+    === CareTaker Menu ===
+    1: Feed Pet
+    2: Play with Pet
+    3: Heal Pet
+    4: View Assigned Pets
+    0: Logout
+    ```
+- **Data Structure**: ArrayList<User>, Binary Search Tree (UserNodeBST)
+- **Test Case Description**: Option 1 se Ali login. Check CareTaker menu.
+
+## Sequence 34: Feed Pet (CareTaker.feedPet)
+- **Feature**: Pet ko feed karna.
+- **Method**: CareTaker.feedPet(int petId)
+- **Input**:
+  - CareTaker Menu Choice: 1
+  - Pet ID: 1
+  - Invalid Input: Pet ID: 99
+- **Expected Output**:
+  - Valid: "Max has been fed."
+  - Invalid: "Pet not found: ID 99"
+  - pets.txt: Update Max's hunger to 50 (from 60)
+- **Data Structure**:
+  - Singly Linked List (PetNode): Update pet hunger.
+- **Test Case Description**: Option 1 se pet feed. Check invalid ID aur pets.txt.
+
+## Sequence 35: Play with Pet (CareTaker.playWithPet)
+- **Feature**: Pet ke saath khelna.
+- **Method**: CareTaker.playWithPet(int petId)
+- **Input**:
+  - CareTaker Menu Choice: 2
+  - Pet ID: 1
+- **Expected Output**:
+  - "Max is happy after playing."
+  - pets.txt: Update Max's mood to 90 (from 80)
+- **Data Structure**:
+  - Singly Linked List (PetNode): Update pet mood.
+- **Test Case Description**: Option 2 se pet play. Check pets.txt.
+
+## Sequence 36: Heal Pet (CareTaker.healPet)
+- **Feature**: Pet heal karna.
+- **Method**: CareTaker.healPet(int petId)
+- **Input**:
+  - CareTaker Menu Choice: 3
+  - Pet ID: 5
+- **Expected Output**:
+  - "Buddy has been healed."
+  - pets.txt: Update Buddy's health to 55 (from 45)
+- **Data Structure**:
+  - Singly Linked List (PetNode): Update pet health.
+- **Test Case Description**: Option 3 se pet heal. Check pets.txt.
+
+## Sequence 37: View Assigned Pets (CareTaker.viewAssignedPets)
+- **Feature**: Assigned pets dekhna.
+- **Method**: CareTaker.viewAssignedPets()
+- **Input**:
+  - CareTaker Menu Choice: 4
+- **Expected Output**:
+  - "Assigned Pets: Max"
+- **Data Structure**:
+  - HashMap<Integer, String> (petAssignments): Pet assignments.
+- **Test Case Description**: Option 4 se assigned pets dekhna.
+
+## Sequence 38: Continue as Guest (VirtualPetSanctuarySimulator.continueAsGuest)
+- **Feature**: Guest mode.
+- **Method**: VirtualPetSanctuarySimulator.continueAsGuest()
+- **Input**:
+  - Main Menu Choice: 3
+- **Expected Output**:
+  - "Continuing as Guest"
+  - Guest Menu:
+    ```
+    === Guest Menu ===
+    1: View All Pets
+    2: View Pet Details
+    0: Exit
+    ```
+- **Data Structure**: None
+- **Test Case Description**: Option 3 se guest mode. Check Guest menu.
+
+## Sequence 39: View All Pets (Guest.viewAllPets)
+- **Feature**: Saare pets dekhna.
+- **Method**: Guest.viewAllPets()
+- **Input**:
+  - Guest Menu Choice: 1
+- **Expected Output**:
+  - "All Pets: Max, Bunny, Fluffy, Simba, Buddy, SnowBall, Thunder, Nala, Thumper, Spirit, Mufasa, Luna, Coco, Sparrow, FLOW"
+- **Data Structure**:
+  - Singly Linked List (PetNode): List pets.
+- **Test Case Description**: Option 1 se saare pets dekhna.
+
+## Sequence 40: View Pet Details (Guest.viewPetDetails)
+- **Feature**: Pet details dekhna.
+- **Method**: Guest.viewPetDetails(int petId)
+- **Input**:
+  - Guest Menu Choice: 2
+  - Pet ID: 1
+  - Invalid Input: Pet ID: 99
+- **Expected Output**:
+  - Valid: "Pet [ID=1, Name=Max, For Sale=true, Age=2, Price=$150.0, Hunger=50, Health=70, Mood=90, Type=dog]"
+  - Invalid: "Pet not found: ID 99"
+- **Data Structure**:
+  - Binary Search Tree (PetNodeBst): Search by ID.
+- **Test Case Description**: Option 2 se pet details dekhna. Check invalid ID.
+
+## Sequence 41: Logout (Manager.logout)
+- **Feature**: Logout karna.
+- **Method**: Manager.logout()
+- **Input**:
+  - Manager Menu Choice: 0
+- **Expected Output**:
+  - "Logged out successfully."
+  - Return to main menu.
+- **Data Structure**: None
+- **Test Case Description**: Option 0 se logout. Check main menu display.
+
+## Notes
+- **Critical Pets**: Buddy (45), SnowBall (30), Thumper (40), Coco (35), Sparrow (10), FLOW (10) health < 50 ke saath critical hain.
+- **Interaction Graph Issue**: `trackPetInteractions` ke liye interactions (e.g., Fed, Played) LinkedList<String> mein store hona chahiye aur display hona chahiye.
+- **Files Affected**:
+  - users.txt: User registrations.
+  - pets.txt: Pet data with health, mood, hunger.
+  - assignments.txt: Pet-CareTaker assignments.
+  - funds.txt: Fund changes.
+  - events.txt: Events, social events, adventures.
+- **Running**:
+  1. Java files in `D:\Java\DSA_PROJECTS\`.
+  2. Implement test cases in `Main.java`.
+  3. Run: `cd D:\Java\DSA_PROJECTS && javac *.java && java Main > output.txt`
+  4. Compare `output.txt` with expected outputs.

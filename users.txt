@@ -1,0 +1,2 @@
+Fahad Sial,fahad@gift.edu.pj,12345678,20,M
+Ali Khan,ali@gmail.com,12345678,20,C
